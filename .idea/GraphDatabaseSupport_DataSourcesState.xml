@@ -6,8 +6,8 @@
         <option name="dataSources">
           <list>
             <DataSourceV1>
-              <option name="uuid" value="cce2aee5-35bc-4471-997d-916bd22a3123" />
-              <option name="name" value="MyData" />
+              <option name="uuid" value="87f474e7-9b03-4f71-bb87-cc23e0692109" />
+              <option name="name" value="hospital" />
               <option name="dataSourceType" value="NEO4J_BOLT" />
               <option name="configuration">
                 <map>

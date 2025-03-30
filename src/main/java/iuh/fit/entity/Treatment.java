@@ -1,20 +1,19 @@
 package iuh.fit.entity;
 
-
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.io.Serializable;
 import java.time.LocalDate;
 
-@Data
-@NoArgsConstructor
+@Getter
+@Setter
+@ToString
 @AllArgsConstructor
+@NoArgsConstructor
 public class Treatment implements Serializable {
+    private Doctor doctor;
+    private Patient patient;
     private LocalDate startDate;
     private LocalDate endDate;
     private String diagnosis;
-    private Doctor doctor;
-    private Patient patient;
 }

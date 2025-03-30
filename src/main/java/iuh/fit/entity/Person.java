@@ -1,18 +1,16 @@
 package iuh.fit.entity;
 
-
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.io.Serializable;
 
-@Data
-@NoArgsConstructor
+@Getter
+@Setter
+@ToString
 @AllArgsConstructor
+@NoArgsConstructor
 public class Person implements Serializable {
     protected String id;
     protected String name;
     protected String phone;
 }
-
