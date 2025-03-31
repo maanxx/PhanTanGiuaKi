@@ -14,4 +14,6 @@ public interface DoctorDaoImpl {
     Map<String, Long> getNoOfDoctorsBySpeciality(String departmentName);
 
     List<Doctor> listDoctorsBySpeciality(String keywords);
+
+    boolean updateDiagnosis(String patientId, String doctorId, String diagnosis);
 }
