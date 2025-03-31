@@ -78,4 +78,23 @@ public class DoctorDao implements DoctorDaoImpl{
             });
         }
     }
+
+    //Cập nhật lại chẩn đoán (diagnosis) của một lượt điều trị khi biết mã số bác sỹ và mã
+    //số bệnh nhân. Lưu ý, chỉ được phép cập nhật khi lượt điều trị này vẫn còn đang điều
+    //trị (tức ngày kết thúc điều trị là null)
+    public boolean updateDiagnosis(String patientId, String doctorId, String diagnosis){
+        String query = "MATCH (p:Patient {patient_id: $patientId})-[r:BE_TREATED]->(d:Doctor {doctor_id: $doctorId})\n" +
+                "WHERE r.end_date IS NULL\n" +
+                "SET r.diagnosis = $diagnosis";
+        try (Session session = AppUtils.getSession())  {
+            return session.executeWrite(tx -> {
+                ResultSummary resultSummary = tx.run(query, Map.of(
+                        "patientId", patientId,
+                        "doctorId", doctorId,
+                        "diagnosis", diagnosis)).consume();
+                // Kiem tra so thuoc tinh duoc cap nhat thay vi so node tao
+                return resultSummary.counters().nodesCreated() > 0;
+            });
+        }
+    }
 }
