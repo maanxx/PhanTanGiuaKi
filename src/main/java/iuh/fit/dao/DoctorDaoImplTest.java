@@ -1,11 +1,8 @@
 package iuh.fit.dao;
 
-
-import iuh.fit.entity.Department;
 import iuh.fit.entity.Doctor;
 import org.junit.jupiter.api.*;
 
-import javax.print.Doc;
 import java.util.List;
 import java.util.Map;
 

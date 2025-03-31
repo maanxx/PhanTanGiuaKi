@@ -21,9 +21,10 @@ dependencies {
     // google gson
     implementation("com.google.code.gson:gson:2.12.1")
 
-
+    testImplementation("org.junit.jupiter:junit-jupiter-api:5.9.2")
     testImplementation(platform("org.junit:junit-bom:5.10.0"))
     testImplementation("org.junit.jupiter:junit-jupiter")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine")
 }
 
 tasks.test {
