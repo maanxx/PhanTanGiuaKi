@@ -3,10 +3,8 @@ package iuh.fit.dao;
 
 import iuh.fit.entity.Doctor;
 import iuh.fit.entity.Treatment;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestInstance;
+import org.junit.jupiter.api.*;
+
 
 import java.util.List;
 import java.util.Map;
@@ -47,7 +45,7 @@ public class DoctorDaoImplTest {
     void getNoOfDoctorsBySpecialityTest() {
         /// departmentName: la cai khoa
         ///  specialityName: la cai chuyen khoa
-       String departmentName = "General Surgery";
+        String departmentName = "General Surgery";
         Map<String, Long> result = doctorDao.getNoOfDoctorsBySpeciality(departmentName);
 
         assertNotNull(result, "result is null");
